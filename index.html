@@ -8,14 +8,17 @@
 
     <style>
         #pad{
-            padding-top: 20px;
+        padding-top: 20px;
         }   
-        #back{background: black;
+        #back{            
+        background: black;
+        opacity: 0.9;
         height: 440px;
         }
         #namebox{
         color: white;
-        background-color:red;
+        opacity: 0.8;
+        background-color:rgb(32, 87, 32);
         padding: 10px;
         text-align: center;
         }
@@ -25,50 +28,56 @@
     <title>Password Generator</title>
 </head>
 
-<body background="assets/images/prism.png">
+<body background="images/hack.jpeg">
 
     <div class="container">
-
         <div>
-
             <div class="row">              
-                    <div class="col-12" id="namebox">
-                        <h1>Password Generator</h1>   
-                    </div>
+                <div class="col-12" style="text-align: center; color: white;">
+                    <h1>Password Generator</h1>   
+                </div>
             </div> 
         </div>
-
-        <div class="row" id="pad"></div> 
-        
+        <div class="row" id="pad"></div>         
             <div class ="row" id ="back">
-
                 <div class="col-12">
-                        <div class="row">
-                            <div class="col-4"></div>
-                                <div class="row">
-                                    <div class="col-12" id="namebox">
-                                        <h2>Generate Your Password Here</h2>   
-                                    </div>
-                                </div>
-                        </div>
-                    <br> 
-                    <br>                               
-                            
-                        <div>
-                            <div class="col-12">
-                                <div class="form-group">
-                                    <label for="exampleFormControlTextarea1"></label>
-                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    <div class="row">
+                        <div class="col-4"></div>
+                            <div class="row">
+                                <div class="col-12" id="namebox">
+                                    <h2>Generate Your Password Here</h2>   
                                 </div>
                             </div>
-                        </div>                                                                       
+                    </div>
+                    <br>                      
+                    <div class="row">
+                        <div class="col-4"></div>
+                        <div class="col-4">
+                            <div class="form-group">
+                                <label for="exampleFormControlTextarea1"></label>
+                                <textarea class="form-control" id="text" rows="4" placeholder="Your Generated Password" style="text-align: center;"></textarea>
+                            </div>
+                        </div>
+                    </div>    
+                    <br>
+                    <br>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-4"></div>                                
+                                <div class="col-2">
+                                    <button type="button" class="btn btn-primary btn-lg" id="genPass">Generate Password</button>
+                                </div>                                
+                                <div class="col-2">
+                                        <button type="button" class="btn btn-primary btn-lg" id="copyPass">Copy Password</button>
+                                </div>      
+                            </div>
+                    </div>                        
                 </div> 
-
             </div>
 
 
     </div>
-    
+    <script type="text/javascript" src="/.script.js"></script>
 </body>
 </html>
 

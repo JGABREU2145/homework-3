@@ -1,53 +1,24 @@
-//var specialCharacters = ["!", "@", "#", "$", "%", "^", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "]", "\\", "`", "{", "|", "}", "~" ];
-//var lowercaseCharacters = "a b c d e f g h i j k l m n o p q r s t u v w x y z".split(" ");
-//var uppercaseCharacters = "A B C D E F G H I J K L M N O P Q R S T U V W X Y Z";.split(" ");
+/*The user will be prompted to choose from the following password criteria:
+Length (must be between 8 and 128 characters)
+Special characters 
+Numeric characters
+Lowercase characters
+Uppercase characters*/
 
-var Password = {
- 
-    _pattern : /[a-zA-Z0-9_\-\+\.]/,
-    
-    
-    _getRandomByte : function()
-    {
-      // http://caniuse.com/#feat=getrandomvalues
-      if(window.crypto && window.crypto.getRandomValues) 
-      {
-        var result = new Uint8Array(1);
-        window.crypto.getRandomValues(result);
-        return result[0];
-      }
-      else if(window.msCrypto && window.msCrypto.getRandomValues) 
-      {
-        var result = new Uint8Array(1);
-        window.msCrypto.getRandomValues(result);
-        return result[0];
-      }
-      else
-      {
-        return Math.floor(Math.random() * 256);
-      }
-    },
-    
-    generate : function(length)
-    {
-      return Array.apply(null, {'length': length})
-        .map(function()
-        {
-          var result;
-          while(true) 
-          {
-            result = String.fromCharCode(this._getRandomByte());
-            if(this._pattern.test(result))
-            {
-              return result;
-            }
-          }        
-        }, this)
-        .join('');  
-    }    
-      
-  };
-  <input type='text' id='p'/><br/>
-  <input type='button' value ='generate' onclick='document.getElementById("p").value = Passw
- ord.generate(16)'></input>
-    
+//promt for criteria
+//link to variables
+//variables for special characters, upper and lower case, and numerals, and character length
+//a loop that chooses a random character from each array of variables
+//an onclick that generates the password when clicked, link by ID
+//displaying the returned password in the text area, link by 
+//an onclick that copies the password to the clipboard
+var passChoice = prompt("Your password must contain to following: Must be between 8-128 characters, contain at least one lower case, upper case letter, as well as one special character and one number.");
+console.log(passChoice)
+
+var specChar = ["!", "@", "#", "$", "%", "^", "&", "'", "(",")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "]", "`", "{", "|", "}", "~" ];
+var lowercaseChar = "abcdefghijklmnopqrstuvwxyz".split("");
+var uppercaseChar = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+var numChar = "0123456789".split("")
+
+
+alert(passChoice());

@@ -75,7 +75,12 @@ genPassBtn.addEventListener("click", function() {
     passDisplay.value = generate(lengthChoice);    
 });
 
-
+function copy() {
+    var copyPass = document.getElementById("pass-text");
+    copyPass.select();
+    document.execCommand("copy");
+};
+    
 getLength();
 
 
